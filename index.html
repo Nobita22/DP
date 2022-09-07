@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="manifest" href="manifest.json">
+    <title>DP</title>
+    <link rel="stylesheet" type="text/css" href="snippets/index.css">
+
+</head>
+
+<body>
+    <div id="box" class="box">
+        <form>
+            <!-- <span class="text-center">login</span> -->
+            <div class="input-container">
+                <input type="text" id="name" required="" />
+                <label>PASSWORD</label>
+            </div>
+
+            <button type="button" class="btn" onclick="signin()">submit</button>
+        </form>
+    </div>
+    <div class="main" id="main" style="display: none;">
+        <button id="signout" onclick="signout()">signout</button>
+        <div id="chat_box">
+            <div id="chat_area" class="chat_area">
+                <div id="messages">
+
+
+                </div>
+
+            </div>
+
+
+            <div id="message_input">
+                <form id="message_box" style="display: flex; align-items:center ; " onsubmit="return sendMessage()">
+                    <!-- <input type="text" class="text_input" placeholder="Message..."/> -->
+                    <!-- <div class="wrapper"> -->
+                    <input id="message" placeholder=" Enter Message" type=" text" class="text_input">
+                    <input style="float: left;height: 50px; margin-bottom:20px ; " id="message_submit" value="Send"
+                        type="submit">
+                    <!-- </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Include firebase.js  -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <!--Configure firebase-->
+    <script src="snippets/index.js"></script>
+
+
+
+</body>
+<script>
+    window.addEventListener('load', () => {
+        registerSW();
+    });
+
+    // Register the Service Worker
+    async function registerSW() {
+        if ('serviceWorker' in navigator) {
+            try {
+                await navigator
+                    .serviceWorker
+                    .register('sw.js');
+            }
+            catch (e) {
+                console.log('SW registration failed');
+            }
+        }
+    }
+</script>
+
+</html>
