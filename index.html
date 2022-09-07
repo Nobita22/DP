@@ -10,7 +10,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
     <link rel="manifest" href="manifest.json">
     <title>DP</title>
-    <link rel="stylesheet" type="text/css" href="snippets/index.css">
+    <link rel="stylesheet" type="text/css" href="./snippets/index.css">
 
 </head>
 
@@ -61,7 +61,7 @@
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
     <!--Configure firebase-->
-    <script src="snippets/index.js"></script>
+    <script src="./snippets/index.js"></script>
 
 
 
@@ -77,7 +77,7 @@
             try {
                 await navigator
                     .serviceWorker
-                    .register('sw.js');
+                    .register('./sw.js');
             }
             catch (e) {
                 console.log('SW registration failed');
