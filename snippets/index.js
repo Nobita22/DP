@@ -67,7 +67,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     db.ref("messages").on("child_added", function (snapshot) {
       var html = "";
       if (snapshot.val().sender == set) {
-        html += '<div class="rmessages">';
+        html += '<br><div class="rmessages">';
         html += snapshot.val().message + " : " + "<b > Me </b>";
         html += "</div>";
 
