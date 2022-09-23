@@ -69,7 +69,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       if (snapshot.val().sender == set) {
         html += '<br><div class="rmessages">';
         html += snapshot.val().message + " : " + "<b > Me </b>";
-        html += "</div>";
+        html += "</div> <br>";
 
         document.getElementById("messages").innerHTML += html;
       }
