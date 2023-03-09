@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function signin() {
   v = document.getElementById("name").value;
-  if (v == "sameer" || v == "dimple") {
+  if (v == "sameer" || v == "pottipilla") {
     console.log(v);
     window.localStorage.setItem("NAME", v);
     var anonymouslyAuth = firebase.auth().signInAnonymously();
